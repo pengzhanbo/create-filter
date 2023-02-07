@@ -1,0 +1,67 @@
+{
+  "name": "create-filter",
+  "version": "0.0.0",
+  "description": "Constructs a filter function which can be used to determine whether or not certain modules should be operated upon.",
+  "keywords": [
+    "glob",
+    "filter"
+  ],
+  "homepage": "https://github.com/pengzhanbo/create-filter",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pengzhanbo/create-filter.git"
+  },
+  "license": "MIT",
+  "author": "pengzhanbo <q942450674@outlook.com> (https://github.com/pengzhanbo)",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "lint": "eslint .",
+    "prepublishOnly": "pnpm run build",
+    "release": "bumpp package.json --execute=\"pnpm release:changelog\" --commit --all --push --tag && pnpm publish --access public",
+    "release:changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
+  },
+  "prettier": "@pengzhanbo/prettier-config",
+  "dependencies": {
+    "bumpp": "^8.2.1",
+    "conventional-changelog-cli": "^2.2.2",
+    "picomatch": "^2.3.1"
+  },
+  "devDependencies": {
+    "@pengzhanbo/eslint-config-ts": "^0.3.2",
+    "@pengzhanbo/prettier-config": "^0.3.2",
+    "@types/node": "^18.13.0",
+    "@types/picomatch": "^2.3.0",
+    "eslint": "^8.33.0",
+    "prettier": "^2.8.3",
+    "sort-package-json": "^2.4.1",
+    "tsup": "^6.6.0",
+    "typescript": "^4.9.5"
+  },
+  "packageManager": "pnpm@7.26.3",
+  "tsup": {
+    "entry": [
+      "src/index.ts"
+    ],
+    "sourcemap": false,
+    "dts": true,
+    "splitting": false,
+    "clean": true,
+    "format": [
+      "esm",
+      "cjs"
+    ]
+  }
+}
