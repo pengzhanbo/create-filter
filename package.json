@@ -1,6 +1,6 @@
 {
   "name": "create-filter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Constructs a filter function which can be used to determine whether or not certain modules should be operated upon.",
   "keywords": [
     "glob",
