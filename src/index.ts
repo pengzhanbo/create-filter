@@ -4,4 +4,6 @@ import createFilter from './createFilter'
 
 export * from './types'
 
-export { createFilter, createFilter as default }
+export { createFilter }
+
+export default createFilter
