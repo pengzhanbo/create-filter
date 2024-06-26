@@ -1,7 +1,7 @@
 {
   "name": "create-filter",
   "type": "module",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "packageManager": "pnpm@9.4.0",
   "description": "Constructs a filter function which can be used to determine whether or not certain modules should be operated upon.",
   "author": "pengzhanbo <q942450674@outlook.com> (https://github.com/pengzhanbo)",
