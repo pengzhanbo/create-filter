@@ -48,19 +48,23 @@ export default function createFilter(
   const excludeMatchers = ensureArray(exclude).map(getMatcher)
 
   return function result(id: string | unknown): boolean {
-    if (typeof id !== 'string') return false
-    if (/\0/.test(id)) return false
+    if (typeof id !== 'string')
+      return false
+    if (/\0/.test(id))
+      return false
 
     const pathId = normalizePath(id)
 
     for (let i = 0; i < excludeMatchers.length; ++i) {
       const matcher = excludeMatchers[i]
-      if (matcher.test(pathId)) return false
+      if (matcher.test(pathId))
+        return false
     }
 
     for (let i = 0; i < includeMatchers.length; ++i) {
       const matcher = includeMatchers[i]
-      if (matcher.test(pathId)) return true
+      if (matcher.test(pathId))
+        return true
     }
 
     return !includeMatchers.length

@@ -27,10 +27,9 @@ const filter = createFilter(['**/*.js'], ['**/__test__/**'], {
 const isSource = filter('src/index.js')
 ```
 
-
 ## `createFilter(include, exclude, options)`
 
-#### include and exclude
+### include and exclude
 
 Type: `String | RegExp | Array[...String|RegExp]`
 
@@ -38,7 +37,7 @@ A valid [picomatch](https://github.com/micromatch/picomatch#globbing-features) p
 
 Note that `picomatch` patterns are very similar to [minimatch](https://github.com/isaacs/minimatch#readme) patterns, and in most use cases, they are interchangeable. If you have more specific pattern matching needs, you can view [this comparison table](https://github.com/micromatch/picomatch#library-comparisons) to learn more about where the libraries differ.
 
-#### options
+### options
 
 **`resolve`**
 
